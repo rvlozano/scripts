@@ -1,5 +1,5 @@
 ## Streamsets scripts
-Miscillanous Scripts.
+Miscellaneous Scripts.
 
 
 ## Disclaimer
