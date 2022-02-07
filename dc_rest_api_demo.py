@@ -1,5 +1,5 @@
 ###
-# Builds a Job Report Identifying duplicates jobs and list all job statuses from SCH.
+# Builds a Job Report Identifying duplicates jobs from each Datacollector and list all job statuses from SCH.
 # - Be sure to create your cookie.txt before running this script.
 ###
 import json
