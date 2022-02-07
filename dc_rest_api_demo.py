@@ -1,4 +1,6 @@
-
+###
+# Builds a Job Report Identifying duplicates jobs and list all job statuses from SCH.
+###
 import json
 import datetime
 import requests
