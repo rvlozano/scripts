@@ -1,5 +1,11 @@
-## Streamsets scripts
+# Streamsets scripts
 Miscellaneous Scripts.
+
+## Disclaimer
+All scripts listed here are for non-production and for demonstration purposes only. There are no guarantees with these scripts. Use at your own risk. Please Read codes for what functionalities they do.
+
+--- 
+# Descriptions:
 
 ### dc_rest_api_demo.py 
 ```
@@ -30,5 +36,4 @@ ee93bd24-0b6a-4cd3-84a4-67eb78328a60:dpmclient.dp userTwo@dpmclient.dp GRAY INAC
 65bceee8-bac3-483a-8963-4ba454493dc8:dpmclient.dp userOne@dpmclient.dp GRAY INACTIVE
 ```
 
-## Disclaimer
-All scripts listed here are for non-production and for demonstration purposes only. There are no guarantees with these scripts. Use at your own risk. Please Read codes for what functionalities they do.
+
