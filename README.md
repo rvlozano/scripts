@@ -37,3 +37,22 @@ ee93bd24-0b6a-4cd3-84a4-67eb78328a60:dpmclient.dp userTwo@dpmclient.dp GRAY INAC
 ```
 
 
+---
+### filesopend.sh
+BASH Script to periodicly check available files that are available using ulimit..
+
+```
+$ lsof -p 95609 > /tmp/during_event_file_descriptors.txt
+$ jstack 95609 > /tmp/during_event_threaddump.txt
+$ ulimit -Hn
+$ ulimit -Sn
+
+$ /tmp/filesopend.sh -p 95609 -t 1 -f /tmp/output
+$ cat /tmp/output 
+2023-01-06 14:10:15 1113484
+2023-01-06 14:14:13 1113483
+2023-01-06 14:15:07 1113484
+2023-01-06 14:15:17 1113484
+2023-01-06 14:17:00 1113482
+2023-01-06 14:18:01 1113484
+```
