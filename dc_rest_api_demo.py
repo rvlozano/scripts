@@ -1,5 +1,6 @@
 ###
-# Builds a Job Report Identifying duplicates jobs from each Datacollector and list all job statuses from SCH.
+# Written by: rlozano@streamsets.com
+# Description: Builds a Job Report Identifying duplicates jobs from each Datacollector and list all job statuses from SCH.
 # - Be sure to create your cookie.txt before running this script.
 ###
 import json
