@@ -30,10 +30,12 @@ set -e
 
 # function to collect data
 function collect {
-	ulcurr=$(lsof -p $pid | wc -l| xargs)
-	ulconf=$(ulimit -n) 
-	let ulatm=ulconf-ulcurr
-	echo $(date +"%Y-%m-%d %T") $ulatm >> $file
+    lssouput=$(lsof -p $pid)
+    echo "$lssouput" > $file"_lsof"
+    ulcurr=$(cat $file"_lsof" | wc -l | xargs)
+    ulconf=$(ulimit -n)
+    let ulatm=ulconf-ulcurr
+    echo $(date +"%Y-%m-%d %T") $ulatm >> $file
 }
 
 echo "tics: " $tics
