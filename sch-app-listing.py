@@ -2,7 +2,6 @@
 # Written by: rlozano@streamsets.com
 # Description: Builds a Report from SCH-APPS API output json.
 # Example: http://SCH_URL:SCHPORT/security/rest/v1/organization/admin/components?componentTypeId=dpm-system&orderBy=ID
-# - Be sure to create your cookie.txt before running this script.
 ###
 
 import json
