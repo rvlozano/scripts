@@ -56,3 +56,20 @@ $ cat /tmp/output
 2023-01-06 14:17:00 1113482
 2023-01-06 14:18:01 1113484
 ```
+
+Small bash script to run agains logs to build a report of waiting salesforce jobs. 
+
+```
+# BASH SCRIPT
+rm waiting.txt joblist.txt report.txt
+grep "INFO  ForceBulkReader - Waiting .* milliseconds for job " sdc.log.* > waiting.txt
+grep -o "job.*" waiting.txt | awk '{ print $2 }' | sort | uniq > joblist.txt
+
+for jobid in $(cat joblist.txt)
+do
+    echo $jobid
+    begin=$(grep --no-f $jobid sdc.log.* | grep "Waiting" | awk '{ print $2 }' | sort | head -1)
+    end=$(grep --no-f $jobid sdc.log.* | grep "Waiting" | awk '{ print $2 }' | sort | tail -1)
+    echo $jobid, $begin, $end>> report.txt
+done
+```
