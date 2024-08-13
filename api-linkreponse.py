@@ -1,4 +1,4 @@
-# Sample Flase Application Test HTTP API Stage "Link in response Field"
+# Sample Flask Application Test HTTP API Stage "Link in response Field"
 # Resource URL : http://192.168.0.24:5000/users?$top=5
 # Next Page Link Field : /@odata.nextLink
 # Stop Condition : ${record:value('/@odata.nextLink') == NULL}
