@@ -1,4 +1,4 @@
-# Streamsets scripts
+# Streamsets Support Scripts
 Miscellaneous Streamsets scripts 
 
 ## Disclaimer
