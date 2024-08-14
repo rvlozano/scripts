@@ -2,7 +2,7 @@
 Miscellaneous Streamsets scripts 
 
 ## Disclaimer
-All scripts listed here are for non-production and for demonstration purposes only. There are no guarantees with these scripts. Use at your own risk. Please Read codes for what functionalities they will do.
+All scripts listed here are for non-production and for demonstration purposes only. All scripts here have assisted in my past diagnotic work.  There are no guarantees with these scripts. Use at your own risk. Please Read codes for what functionalities they will do.
 
 --- 
 # Descriptions:
