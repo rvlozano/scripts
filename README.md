@@ -8,6 +8,8 @@ All scripts listed here are for non-production and for demonstration purposes on
 # Descriptions:
 
 ### dc_rest_api_demo.py 
+Builds a Job Report Identifying duplicate jobs from each Datacollector and list all job statuses from SCH.
+
 ```
 $ python3 dc_rest_api_demo.py 
 date: 2022-02-04 20:57:36.208062
