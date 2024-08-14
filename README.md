@@ -1,5 +1,5 @@
 # Streamsets scripts
-Miscellaneous Scripts.
+Miscellaneous Streamsets scripts 
 
 ## Disclaimer
 All scripts listed here are for non-production and for demonstration purposes only. There are no guarantees with these scripts. Use at your own risk. Please Read codes for what functionalities they will do.
@@ -37,7 +37,6 @@ ee93bd24-0b6a-4cd3-84a4-67eb78328a60:dpmclient.dp userTwo@dpmclient.dp GRAY INAC
 ```
 
 
----
 ### filesopend.sh
 BASH Script to periodicly check available files that are available using ulimit..
 
@@ -75,3 +74,13 @@ do
     echo $jobid, $begin, $end>> report.txt
 done
 ```
+
+### api-linkreponse.py
+Sample Flask Application Test HTTP API Stage "Link in response Field"
+
+### memory_check.sh
+Should add to cron job. Checks memory, if greater than threshold it will log to file Data and ProcessList.
+
+### retry-technique.py
+Technique on handling retries upon failed requests.
+
