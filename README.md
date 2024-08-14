@@ -58,7 +58,7 @@ $ cat /tmp/output
 ```
 
 ### Salesforce log script.
-Small bash script to run agains logs to build a report of waiting salesforce jobs. 
+Small bash script to run against logs to build a report of waiting salesforce jobs. 
 You should be able check the "Bulk Data Load Job" in salesforce interface.
 
 ```
