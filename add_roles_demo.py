@@ -49,7 +49,7 @@ def get_headers(session_token):
     }
 
 def get_available_roles(session_token):
-    # Fetches roles from the Control Hub and prints their IDs.
+    # Fetches available roles from the Control Hub and prints their IDs.
     warnings.filterwarnings("ignore", message="Unverified HTTPS request")
    
     api_url = SCH_ENDPOINT + "/security/rest/v1/roles"
@@ -71,7 +71,6 @@ def get_available_roles(session_token):
 def get_user_roles(session_token, organization_id, user_id):
     warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
-    # API endpoint
     api_url = SCH_ENDPOINT + f"/security/rest/v1/organization/{organization_id}/user/{user_id}"
     api_headers = get_headers(session_token)
     api_response = requests.get(api_url, headers=api_headers, verify=False)
@@ -88,7 +87,6 @@ def get_user_roles(session_token, organization_id, user_id):
 def get_user(session_token, organization_id, user_id):
     warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
-    # API endpoint
     api_url = SCH_ENDPOINT + f"/security/rest/v1/organization/{organization_id}/user/{user_id}"
     api_headers = get_headers(session_token)
     api_response = requests.get(api_url, headers=api_headers, verify=False)
@@ -101,26 +99,22 @@ def get_user(session_token, organization_id, user_id):
         raise Exception(f"API call failed. Status code: {api_response.status_code}, Response: {api_response.text}")
 
 def edit_user(session_token, organization_id, user_id, user_data):
-    # Edits a user in a specific organization.
+    # Edits a user in a specific organization vi POST.
     warnings.filterwarnings("ignore", message="Unverified HTTPS request")
     
-    # API endpoint
     api_url = SCH_ENDPOINT + f"/security/rest/v1/organization/{organization_id}/user/{user_id}"
     api_headers = get_headers(session_token)
     
-    # Make the POST request with the provided user data
     api_response = requests.post(api_url, headers=api_headers, json=user_data, verify=False)
     
     if api_response.status_code == 200:
-        # Parse and return the response
         return api_response.json()
     else:
         raise Exception(f"API call failed. Status code: {api_response.status_code}, Response: {api_response.text}")
 
 
 def add_role(session_token, available_roles, organization_id, user_id, added_role):
-    # Define the role to be added
-
+    # Add Role to User
     if added_role in available_roles:
         user = get_user(session_token, organization_id=organization_id, user_id=user_id)
         roles = user.get("roles", [])
