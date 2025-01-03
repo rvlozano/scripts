@@ -11,10 +11,10 @@ import requests
 import warnings
 import getpass
 
+warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
 def login_to_control_hub(username, password):
     # Logs in to the Control Hub and returns the session token.
-    warnings.filterwarnings("ignore", message="Unverified HTTPS request")
     
     login_url = SCH_ENDPOINT + "/security/public-rest/v1/authentication/login"
     login_payload = f'{{"userName":"{username}", "password":"{password}"}}'  # Raw JSON string
@@ -50,7 +50,6 @@ def get_headers(session_token):
 
 def get_available_roles(session_token):
     # Fetches available roles from the Control Hub and prints their IDs.
-    warnings.filterwarnings("ignore", message="Unverified HTTPS request")
    
     api_url = SCH_ENDPOINT + "/security/rest/v1/roles"
     api_headers = get_headers(session_token)
@@ -69,7 +68,6 @@ def get_available_roles(session_token):
         raise Exception(f"API call failed. Status code: {api_response.status_code}, Response: {api_response.text}")
 
 def get_user_roles(session_token, organization_id, user_id):
-    warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
     api_url = SCH_ENDPOINT + f"/security/rest/v1/organization/{organization_id}/user/{user_id}"
     api_headers = get_headers(session_token)
@@ -85,7 +83,6 @@ def get_user_roles(session_token, organization_id, user_id):
 
 
 def get_user(session_token, organization_id, user_id):
-    warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
     api_url = SCH_ENDPOINT + f"/security/rest/v1/organization/{organization_id}/user/{user_id}"
     api_headers = get_headers(session_token)
@@ -100,7 +97,6 @@ def get_user(session_token, organization_id, user_id):
 
 def edit_user(session_token, organization_id, user_id, user_data):
     # Edits a user in a specific organization vi POST.
-    warnings.filterwarnings("ignore", message="Unverified HTTPS request")
     
     api_url = SCH_ENDPOINT + f"/security/rest/v1/organization/{organization_id}/user/{user_id}"
     api_headers = get_headers(session_token)
@@ -145,7 +141,7 @@ if __name__ == "__main__":
         available_roles = list(available_roles)
         for num, i in enumerate(available_roles):
             print(num,i) 
-        role_num = input("Please role to add  number: ")
+        role_num = input("Please select role to add  (#): ")
         role_num = int(role_num)
         print(available_roles[role_num])
         user_id = input("Please enter user Id, example - username@org_id: ")
