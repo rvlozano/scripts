@@ -137,29 +137,29 @@ def add_role(session_token, available_roles, organization_id, user_id, added_rol
 
 
 # Main
-try:
-    
-    global SCH_ENDPOINT 
-    SCH_ENDPOINT = "https://cloud.streamsets.com"
+if __name__ == "__main__":
+    try:
+        global SCH_ENDPOINT 
+        SCH_ENDPOINT = "https://cloud.streamsets.com"
 
-    # Asking for user input
-    api_username = input("API Username: ")
-    api_password = getpass.getpass("API Password: ")
+        # Ask for user input
+        api_username = input("API Username: ")
+        api_password = getpass.getpass("API Password: ")
 
-    session_token = login_to_control_hub(api_username, api_password)
-    available_roles  = get_available_roles(session_token)
-    available_roles = list(available_roles)
-    for num, i in enumerate(available_roles):
-        print(num,i) 
-    role_num = input("Please role to add  number: ")
-    role_num = int(role_num)
-    print(available_roles[role_num])
-    user_id = input("Please enter user Id, example - username@org_id: ")
-    org_id = input("Please enter in org_id, exemple - org_id: ")
-    add_role(session_token, available_roles, organization_id=org_id, user_id=user_id, added_role=available_roles[role_num])
+        session_token = login_to_control_hub(api_username, api_password)
+        available_roles  = get_available_roles(session_token)
+        available_roles = list(available_roles)
+        for num, i in enumerate(available_roles):
+            print(num,i) 
+        role_num = input("Please role to add  number: ")
+        role_num = int(role_num)
+        print(available_roles[role_num])
+        user_id = input("Please enter user Id, example - username@org_id: ")
+        org_id = input("Please enter in org_id, exemple - org_id: ")
+        add_role(session_token, available_roles, organization_id=org_id, user_id=user_id, added_role=available_roles[role_num])
     
-except Exception as e:
-    print(str(e))
+    except Exception as e:
+        print(str(e))
 
 
 
