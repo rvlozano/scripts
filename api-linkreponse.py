@@ -1,7 +1,36 @@
-# Sample Flask Application Test HTTP API Stage "Link in response Field"
-# Resource URL : http://192.168.0.24:5000/users?$top=5
-# Next Page Link Field : /@odata.nextLink
-# Stop Condition : ${record:value('/@odata.nextLink') == NULL}
+"""
+# Sample Flask Application Test HTTP API
+
+## Overview
+This script is a flask application that simulates a HTTP API that supports pagination. 
+It is designed to act as a mock User API to help developers test and implement client-side 
+pagination logic.
+
+## API Details
+
+### Base URL:
+- `http://192.168.0.24:5000/users`
+
+### Query Parameters:
+- `$top` (Optional): Specifies the maximum number of records to retrieve in the current request.
+  Example: `http://192.168.0.24:5000/users?$top=5`
+
+### Pagination:
+- **Next Page Link Field**: `/@odata.nextLink`
+  The API response includes a field `/@odata.nextLink` that points to the next page of records if more data is available.
+  
+- **Stop Condition**: 
+  Pagination should stop when the field `/@odata.nextLink` is `NULL`, indicating no more pages to retrieve.
+
+## Features:
+- Simulates user data with pagination support.
+- Useful for testing APIs that utilize OData conventions for pagination.
+
+## Example Usage:
+1. **Fetch Users**:
+   Send a GET request to the URL with or without the `$top` parameter:
+"""
+
 from flask import Flask, jsonify, request
 from urllib.parse import urlencode
 
