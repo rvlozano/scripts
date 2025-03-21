@@ -6,9 +6,8 @@ sch_dev = ControlHub_lower('https://cloud.streamsets.com', username=<username>, 
 sch_prod = ControlHub_upper('https://cloud.streamsets.com', username=<username>, password=<password>)
 
 # Step 1: make a list of jobs to export then export them from DEV.
-dev_job=sch_dev.jobs.get(job_name='Job for richard_migrate_test')
-
 dev_exported_jobs = []
+dev_job=sch_dev.jobs.get(job_name='Job for richard_migrate_test')
 dev_exported_jobs.append(dev_job) # Keep on appending as many jobs you'd like to the list.
 dev_exported_jobs.append(sch_dev.jobs.get_all()[1]) # grab another random job throw in list.
 
