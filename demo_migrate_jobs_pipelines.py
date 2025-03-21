@@ -1,4 +1,4 @@
-# Migrate a List of Jobs with its associated Pipelines
+# Migrate a List of Jobs with its associated Pipelines for Legacy SCH 3.x
 
 from streamsets.sdk import ControlHub as ControlHub_lower
 from streamsets.sdk import ControlHub as ControlHub_upper
